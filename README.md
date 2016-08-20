@@ -1,4 +1,5 @@
 # Security on Flask
+[![Build Status](https://snap-ci.com/roselmamendes/security-on-flask/branch/master/build_image)](https://snap-ci.com/roselmamendes/security-on-flask/branch/master)
 
 This project is aiming to be an example for a flask project focusing in security good practices.
 
