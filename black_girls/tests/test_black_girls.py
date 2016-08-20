@@ -2,7 +2,7 @@ import unittest
 import json
 from black_girls import black_girls
 
-class BlackGirlTest(unittest.TestCase):
+class TestBlackGirl(unittest.TestCase):
 
     def setUp(self):
         black_girls.app.testing = True
