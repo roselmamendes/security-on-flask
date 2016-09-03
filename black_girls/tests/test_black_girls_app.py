@@ -1,15 +1,15 @@
 import unittest
 import json
-from black_girls import black_girls
+from black_girls import black_girls_app
 
 class TestBlackGirl(unittest.TestCase):
 
     def setUp(self):
-        black_girls.app.testing = True
-        self.app = black_girls.app.test_client()
+        black_girls_app.app.testing = True
+        self.app = black_girls_app.app.test_client()
 
     def tearDown(self):
-        black_girls.girls = []
+        black_girls_app.girls = []
 
     def test_should_return_all_saved_girls(self):
         data = json.dumps(dict(name='Nina', profissao='dev', github='nina99'))

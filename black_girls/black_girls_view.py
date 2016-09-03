@@ -1,5 +1,7 @@
 from flask import Response
 import json
+from black_girls import black_girls_app
+
 
 class GirlsView:
     @staticmethod
@@ -11,8 +13,9 @@ class GirlsView:
 
 
 class GirlsGetView:
-    def get_response(self, data=None):
-        return Response(json.dumps(data), status=200, mimetype='application/json')
+    def get_response(self):
+        return Response(json.dumps(black_girls_app.girls), status=200,
+                        mimetype='application/json')
 
 
 class GirlsPostView:
