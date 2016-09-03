@@ -29,11 +29,11 @@ class TestBlackGirl(unittest.TestCase):
         self.assertEqual(expected_resp, actual_resp)
 
     def test_should_create_a_girl_record(self):
-        data = json.dumps(dict(name='Nina', profissao='dev', github='nina99'))
+        expected_resp = json.dumps(dict(name='Nina', profissao='dev', github='nina99'))
 
-        resp = self.app.post('/girls', data=data)
+        resp = self.app.post('/girls', data=expected_resp)
 
         actual_resp = json.loads(resp.data.decode('utf8'))
 
         self.assertEqual(201, resp.status_code, resp.data)
-        self.assertEqual(json.loads(data), actual_resp)
+        self.assertEqual(json.loads(expected_resp), actual_resp)

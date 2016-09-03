@@ -14,12 +14,12 @@ class TestGirlsView(unittest.TestCase):
         black_girls_app.girls = [
             {'name': 'Nina', 'profissao': 'dev', 'github': 'nina99'}
         ]
+        expected_resp = Response(
+            json.dumps(
+                [{'name': 'Nina', 'profissao': 'dev', 'github': 'nina99'}]),
+            status=200, mimetype='application/json')
 
         girls_get_view = GirlsView.generator('GET')
-
-        expected_resp = Response(
-            json.dumps([{'name': 'Nina', 'profissao': 'dev', 'github': 'nina99'}]),
-            status=200, mimetype='application/json')
         actual_resp = girls_get_view.get_response()
 
         self.assertEqual(expected_resp.status, actual_resp.status)
